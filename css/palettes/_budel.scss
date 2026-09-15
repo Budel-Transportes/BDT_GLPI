@@ -6,6 +6,7 @@
  * http://glpi-project.org
  *
  * @copyright 2015-2026 Teclib' and contributors.
+ * @copyright 2003-2014 by the INDEPNET Development Team.
  * @licence   https://www.gnu.org/licenses/gpl-3.0.html
  *
  * ---------------------------------------------------------------------
@@ -30,43 +31,17 @@
  * ---------------------------------------------------------------------
  */
 
-@use "@fontsource-utils/scss" as fontsource;
-@use "@fontsource/inter/scss" as inter;
-@use "@fontsource/lato/scss" as lato;
-@use "@fontsource/montserrat/scss" as montserrat;
-
-$enable-negative-margins: true;
-$link-hover-decoration: none;
-
-@import "@tabler/core/scss/core";
-
-@include fontsource.faces(
-    $metadata: inter.$metadata,
-    $subsets: all,
-    $weights: all,
-    $styles: normal
-);
-
-// Used by the Budel theme (see css/palettes/_budel.scss) for headings/highlighted numbers.
-@include fontsource.faces(
-    $metadata: lato.$metadata,
-    $subsets: all,
-    $weights: (900),
-    $styles: normal
-);
-
-// Used by the Budel theme (see css/palettes/_budel.scss) as the body font.
-@include fontsource.faces(
-    $metadata: montserrat.$metadata,
-    $subsets: all,
-    $weights: (400, 600, 700),
-    $styles: normal
-);
-
-:root {
-    --tblr-font-sans-serif: inter, -apple-system, blinkmacsystemfont, san francisco, segoe ui, roboto, helvetica neue, sans-serif;
+:root[data-glpi-theme="budel"] {
+    --tblr-primary-rgb: 161, 15, 15; // #a10f0f
+    --tblr-primary-fg: #fff;
+    --tblr-primary-darken: #c21414;
+    --tblr-link-color-rgb: 161, 15, 15;
+    --tblr-secondary: #6d6d72;
+    --tblr-border-color: #cfcfd3;
+    --tblr-border-color-translucent: #e7e7e9;
+    --tblr-body-bg: #f1f1f2;
+    --glpi-mainmenu-bg: #161616;
+    --glpi-mainmenu-fg: #fff;
+    --tblr-font-sans-serif: montserrat, sans-serif;
+    --glpi-font-heading: lato, sans-serif;
 }
-
-$ti-font-path: "@tabler/icons-webfont/dist/fonts";
-
-@import "@tabler/icons-webfont/dist/tabler-icons";
