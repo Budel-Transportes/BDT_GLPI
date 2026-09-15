@@ -42,4 +42,15 @@
     --tblr-body-bg: #f1f1f2;
     --glpi-mainmenu-bg: #161616;
     --glpi-mainmenu-fg: #fff;
+
+    // BDT-14 — Brand vs semantic colors: DO NOT "fix" by unifying.
+    // The Budel brand red (#a10f0f) is intentionally close to but distinct
+    // from the semantic reds used for status/overdue
+    // (e.g. #ff0014 in _dates_timelines.scss, rgb(167, 47, 0) in
+    // _status.scss). Status colors are hardcoded hex literals OUTSIDE the
+    // theme variable system, so no theme (including this one) can alter
+    // them — that is by design (brand color must never replace meaning).
+    // This theme deliberately does not override --tblr-danger, --tblr-warning,
+    // --tblr-success or --tblr-info: they inherit the GLPI/Tabler global
+    // defaults identically in every theme.
 }
