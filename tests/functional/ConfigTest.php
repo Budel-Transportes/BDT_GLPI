@@ -344,6 +344,7 @@ class ConfigTest extends DbTestCase
             'auror'           => 'Auror',
             'auror_dark'      => 'Dark Auror',
             'automn'          => 'Autumn',
+            'budel'           => 'Budel',
             'classic'         => 'Classic',
             'clockworkorange' => 'Clockwork Orange',
             'dark'            => 'Dark',
