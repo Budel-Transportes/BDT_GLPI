@@ -61,4 +61,18 @@
     // Tokens GLPI (namespace proprio) — fonte unica para BDT-9..13
     --glpi-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.08);
     --glpi-shadow-card-strong: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 24px rgba(0, 0, 0, 0.12);
+
+    // BDT-9 — botao primario: fundo preto (#161616), hover/active vermelho (#a10f0f)
+    // Override escopado por variaveis Tabler (--tblr-btn-*) para nao afetar outros temas;
+    // consome --tblr-primary ja definido acima apenas como referencia, sem redefinir cor global.
+    .btn-primary {
+        --tblr-btn-bg: #161616;
+        --tblr-btn-border-color: #161616;
+        --tblr-btn-color: #fff;
+        --tblr-btn-hover-bg: #a10f0f;
+        --tblr-btn-hover-border-color: #a10f0f;
+        --tblr-btn-hover-color: #fff;
+        --tblr-btn-active-bg: #a10f0f;
+        --tblr-btn-active-border-color: #a10f0f;
+    }
 }
