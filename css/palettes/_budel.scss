@@ -44,29 +44,21 @@
     --glpi-mainmenu-fg: #fff;
 
     // BDT-8 — tokens de raio e sombra (apenas tema budel)
-    // Raio grande 14px para cards/modais (Tabler: --tblr-border-radius-lg, propagado para --tblr-card-border-radius e --tblr-modal-border-radius)
+    // Raio grande 14px para cards/modais — Tabler: --tblr-border-radius-lg (propaga via $card-border-radius em tempo de compilacao)
     --tblr-border-radius-lg: 14px;
-    --tblr-card-border-radius: 14px;
-    --tblr-modal-border-radius: 14px;
 
-    // Raio pequeno 8px para botões/inputs/badges (Tabler defaults: --tblr-border-radius 6px, --tblr-border-radius-sm 4px)
+    // Raio pequeno 8px para botoes/inputs/badges (Tabler defaults: --tblr-border-radius 6px, --tblr-border-radius-sm 4px)
     --tblr-border-radius: 8px;
     --tblr-border-radius-sm: 8px;
 
     // Sombras — valores do DESIGN_SYSTEM.md
-    --sombra-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.08);
-    --sombra-card-forte: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 24px rgba(0, 0, 0, 0.12);
-
-    // Mapeamento para variáveis Tabler de sombra usadas em cards/modais
-    // Tabler usa --tblr-shadow-card (cards) e --tblr-modal-box-shadow / --tblr-box-shadow-lg (modais/overlays)
+    // Vars Tabler geradas em _props.scss: --tblr-shadow-{nome} (--tblr-shadow-card, --tblr-shadow-card-hover, etc.).
+    // Nao ha consumidor var() no core hoje; a.btn usa var(--tblr-shadow-input) e a.card:hover usa $box-shadow-card-hover em tempo de compilacao.
+    // BDT-11 aplicara --tblr-shadow-card / --tblr-shadow-card-hover nos cards.
     --tblr-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.08);
-    --tblr-card-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.08);
-    --tblr-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.08);
-    --tblr-box-shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 24px rgba(0, 0, 0, 0.12);
-    --tblr-modal-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 24px rgba(0, 0, 0, 0.12);
     --tblr-shadow-card-hover: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 24px rgba(0, 0, 0, 0.12);
 
-    // Fallback GLPI caso Tabler não tenha variável adequada (divulgado no PR)
+    // Tokens GLPI (namespace proprio) — fonte unica para BDT-9..13
     --glpi-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.08);
     --glpi-shadow-card-strong: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 24px rgba(0, 0, 0, 0.12);
 }
