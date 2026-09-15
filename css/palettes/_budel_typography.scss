@@ -6,6 +6,7 @@
  * http://glpi-project.org
  *
  * @copyright 2015-2026 Teclib' and contributors.
+ * @copyright 2003-2014 by the INDEPNET Development Team.
  * @licence   https://www.gnu.org/licenses/gpl-3.0.html
  *
  * ---------------------------------------------------------------------
@@ -30,43 +31,21 @@
  * ---------------------------------------------------------------------
  */
 
-@use "@fontsource-utils/scss" as fontsource;
-@use "@fontsource/inter/scss" as inter;
-@use "@fontsource/lato/scss" as lato;
-@use "@fontsource/montserrat/scss" as montserrat;
+// Heading/highlighted-number selectors for the Budel theme (--glpi-font-heading, see
+// css/palettes/_budel.scss). Kept separate from _budel.scss so that file stays limited to
+// CSS custom property definitions, matching every other palette in this directory.
+:root[data-glpi-theme="budel"] {
+    h1.page-title,
+    .card-title {
+        font-family: var(--glpi-font-heading);
+        font-weight: 900;
+    }
 
-$enable-negative-margins: true;
-$link-hover-decoration: none;
-
-@import "@tabler/core/scss/core";
-
-@include fontsource.faces(
-    $metadata: inter.$metadata,
-    $subsets: all,
-    $weights: all,
-    $styles: normal
-);
-
-// Used by the Budel theme (see css/palettes/_budel.scss) for headings/highlighted numbers.
-@include fontsource.faces(
-    $metadata: lato.$metadata,
-    $subsets: all,
-    $weights: (900),
-    $styles: normal
-);
-
-// Used by the Budel theme (see css/palettes/_budel.scss) as the body font.
-@include fontsource.faces(
-    $metadata: montserrat.$metadata,
-    $subsets: all,
-    $weights: (400, 600, 700),
-    $styles: normal
-);
-
-:root {
-    --tblr-font-sans-serif: inter, -apple-system, blinkmacsystemfont, san francisco, segoe ui, roboto, helvetica neue, sans-serif;
+    .big-number .formatted-number {
+        .number,
+        .suffix {
+            font-family: var(--glpi-font-heading);
+            font-weight: 900;
+        }
+    }
 }
-
-$ti-font-path: "@tabler/icons-webfont/dist/fonts";
-
-@import "@tabler/icons-webfont/dist/tabler-icons";

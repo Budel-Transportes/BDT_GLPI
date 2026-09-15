@@ -11,6 +11,8 @@
         "@floating-ui/dom": "^1.8.0",
         "@fontsource-utils/scss": "^0.2.4",
         "@fontsource/inter": "^5.3.0",
+        "@fontsource/lato": "^5.3.0",
+        "@fontsource/montserrat": "^5.3.0",
         "@fortawesome/fontawesome-free": "^7.3.1",
         "@fullcalendar/core": "^6.1.21",
         "@fullcalendar/daygrid": "^6.1.21",
