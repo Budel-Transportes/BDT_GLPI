@@ -76,6 +76,7 @@ class ThemeManager
                 new Theme('auror', 'Auror', false, false),
                 new Theme('auror_dark', 'Dark Auror', true, false),
                 new Theme('automn', 'Autumn', false, false),
+                new Theme('budel', 'Budel', false, false),
                 new Theme('classic', 'Classic', false, false),
                 new Theme('clockworkorange', 'Clockwork Orange', false, false),
                 new Theme('dark', 'Dark', false, false),
