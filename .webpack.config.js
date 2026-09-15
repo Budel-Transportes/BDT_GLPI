@@ -28,7 +28,12 @@ const config = {
                 if (entry_name in entries) {
                     throw new Error(`Duplicate bundle entry: '${entry_name}'.`);
                 }
-                entries[entry_name] = file;
+                // Normalize to a POSIX-style relative path starting with './'.
+                // On Windows, `file` contains backslashes (e.g. 'lib\bundles\tabler.scss'),
+                // which webpack's resolver treats as a *module* request (node_modules lookup)
+                // instead of a relative file path, since it doesn't start with './'.
+                // This breaks every single bundle entry when building on Windows.
+                entries[entry_name] = './' + path.relative(__dirname, file).split(path.sep).join('/');
             }
         }
 
