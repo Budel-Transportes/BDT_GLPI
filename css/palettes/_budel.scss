@@ -31,26 +31,26 @@
  * ---------------------------------------------------------------------
  */
 
-// Base dark mode palette. Base for light palette is in css/includes/_base.scss.
-@import "includes/palette_dark";
+:root[data-glpi-theme="budel"] {
+    --tblr-primary-rgb: 161, 15, 15; // #a10f0f
+    --tblr-primary-fg: #fff;
+    --tblr-primary-darken: #c21414;
+    --tblr-link-color-rgb: 161, 15, 15;
+    --tblr-secondary: #6d6d72;
+    --tblr-border-color: #cfcfd3;
+    --tblr-border-color-translucent: #e7e7e9;
+    --tblr-body-bg: #f1f1f2;
+    --glpi-mainmenu-bg: #161616;
+    --glpi-mainmenu-fg: #fff;
 
-// Palettes
-@import "palettes/aerialgreen";
-@import "palettes/auror";
-@import "palettes/auror_dark";
-@import "palettes/automn";
-@import "palettes/budel";
-@import "palettes/classic";
-@import "palettes/clockworkorange";
-@import "palettes/dark";
-@import "palettes/darker";
-@import "palettes/flood";
-@import "palettes/greenflat";
-@import "palettes/hipster";
-@import "palettes/icecream";
-@import "palettes/lightblue";
-@import "palettes/midnight";
-@import "palettes/premiumred";
-@import "palettes/purplehaze";
-@import "palettes/teclib";
-@import "palettes/vintage";
+    // BDT-14 — Brand vs semantic colors: DO NOT "fix" by unifying.
+    // The Budel brand red (#a10f0f) is intentionally close to but distinct
+    // from the semantic reds used for status/overdue
+    // (e.g. #ff0014 in _dates_timelines.scss, rgb(167, 47, 0) in
+    // _status.scss). Status colors are hardcoded hex literals OUTSIDE the
+    // theme variable system, so no theme (including this one) can alter
+    // them — that is by design (brand color must never replace meaning).
+    // This theme deliberately does not override --tblr-danger, --tblr-warning,
+    // --tblr-success or --tblr-info: they inherit the GLPI/Tabler global
+    // defaults identically in every theme.
+}
